@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحدي الحب الرقمي - أمير ودلال 💖</title>
+    <style>
+        :root {
+            --primary-color: #ff6b8b;
+            --secondary-color: #ffb8c6;
+            --accent-color: #ff4757;
+            --text-color: #333;
+            --light-color: #fff9fa;
+            --dark-color: #5a2a37;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        header {
+            text-align: center;
+            padding: 25px 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(30deg);
+            pointer-events: none;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+        
+        .section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .challenge {
+            background-color: var(--light-color);
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+            transition: var(--transition);
+        }
+        
+        .challenge:hover {
+            transform: translateX(5px);
+        }
+        
+        .challenge h3 {
+            margin-top: 0;
+            color: var(--dark-color);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: var(--transition);
+            font-weight: 600;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        
+        button:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        .completed {
+            opacity: 0.7;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .completed::after {
+            content: "✓ تم الإنجاز";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        textarea, input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            transition: var(--transition);
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        textarea:focus, input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(255, 107, 139, 0.2);
+        }
+        
+        .memory-item {
+            background-color: white;
+            border: 1px solid #eee;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        
+        .memory-item:hover {
+            border-color: var(--secondary-color);
+        }
+        
+        .memory-date {
+            font-size: 0.8rem;
+            color: #777;
+            margin-bottom: 5px;
+        }
+        
+        .countdown {
+            font-size: 1.5rem;
+            text-align: center;
+            margin: 25px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .countdown div {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            min-width: 80px;
+            box-shadow: var(--shadow);
+        }
+        
+        .countdown div span {
+            display: block;
+            font-size: 0.8rem;
+            margin-top: 5px;
+            opacity: 0.9;
+        }
+        
+        .love-note {
+            background-color: #fff0f3;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px dashed var(--primary-color);
+            position: relative;
+        }
+        
+        .love-note::before {
+            content: "💌";
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            font-size: 2rem;
+            opacity: 0.3;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary-color);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #ff9eb1;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 30px;
+            color: #777;
+        }
+        
+        .empty-state img {
+            width: 80px;
+            opacity: 0.5;
+            margin-bottom: 15px;
+        }
+        
+        .theme-selector {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .theme-option {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+        
+        .theme-option:hover {
+            transform: scale(1.1);
+        }
+        
+        .theme-option.active {
+            border-color: var(--text-color);
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            h2 {
+                font-size: 1.3rem;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .countdown {
+                gap: 10px;
+            }
+            
+            .countdown div {
+                padding: 10px 15px;
+                min-width: 70px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>مرحبًا أمير ودلال 💖، هذا هو عالمكما الخاص!</h1>
+            <p>مساحة رقمية لتعزيز حبكم عن بعد</p>
+        </header>
+        
+        <div class="section" id="daily-challenge">
+            <h2>تحدي اليوم</h2>
+            <div class="challenge">
+                <h3 id="challenge-title">جارٍ تحميل التحدي...</h3>
+                <p id="challenge-description"></p>
+                <button onclick="completeChallenge('daily')">تم الإنجاز</button>
+                <button class="btn-secondary" onclick="skipChallenge()">تخطي هذا التحدي</button>
+            </div>
+        </div>
+        
+        <div class="section" id="memories">
+            <h2>ذكرياتنا 💞</h2>
+            <div id="memories-list">
+                <!-- سيتم ملؤها بالذكريات من localStorage -->
+            </div>
+        </div>
+        
+        <div class="section" id="surprise">
+            <h2>مفاجأة اليوم!</h2>
+            <div id="surprise-content">
+                <p>اضغط على الزر لتحصل على فكرة لمفاجأة رقمية لطيفة</p>
+                <button onclick="generateSurprise()">أعطني مفاجأة</button>
+            </div>
+        </div>
+        
+        <div class="section" id="secret-messages">
+            <h2>رسائل سرية 💌</h2>
+            <div>
+                <textarea id="new-message" placeholder="اكتب رسالة سرية لشريكك... (ستظهر له/لها عند الزيارة القادمة)"></textarea>
+                <div class="btn-group">
+                    <button onclick="saveSecretMessage()">إرسال</button>
+                    <button class="btn-secondary" onclick="clearMessage()">مسح</button>
+                </div>
+            </div>
+            <div id="received-message" class="love-note" style="display: none;">
+                <h3>رسالة جديدة من حبيبك:</h3>
+                <p id="message-content"></p>
+                <button onclick="hideMessage()">تمت القراءة</button>
+            </div>
+        </div>
+        
+        <div class="section" id="countdown">
+            <h2>العد التنازلي للقائنا القادم ⏳</h2>
+            <div class="countdown" id="countdown-timer">
+                <!-- سيتم ملؤه بالعد التنازلي -->
+            </div>
+        </div>
+        
+        <div class="section" id="feelings">
+            <h2>كيف أشعر اليوم؟</h2>
+            <div>
+                <textarea id="today-feeling" placeholder="اكتب كيف تشعر اليوم... (هذه الرسالة خاصة بك فقط)"></textarea>
+                <button onclick="saveFeeling()">حفظ</button>
+            </div>
+            <div id="feelings-history">
+                <!-- تاريخ المشاعر -->
+            </div>
+        </div>
+        
+        <div class="section" id="random-scenario">
+            <h2>موقفنا الرومانسي الافتراضي اليوم 🎭</h2>
+            <div id="scenario-content">
+                <p id="scenario-text">"تخيل أننا في مقهى الآن، وأنت تطلب لي مشروبي المفضل، ما هو؟ ☕"</p>
+                <button onclick="generateScenario()">غير الموقف</button>
+            </div>
+        </div>
+        
+        <div class="section" id="customization">
+            <h2>تخصيص الموقع 🎨</h2>
+            <div>
+                <label for="partner-name">اسم الحبيب:</label>
+                <input type="text" id="partner-name" placeholder="أدخل اسم شريكك">
+                <button onclick="saveCustomization()">حفظ التخصيصات</button>
+                
+                <h3 style="margin-top: 20px;">اختر لون الموقع:</h3>
+                <div class="theme-selector">
+                    <div class="theme-option active" style="background: #ff6b8b;" onclick="changeTheme('#ff6b8b', '#ff4757')"></div>
+                    <div class="theme-option" style="background: #6b8bff;" onclick="changeTheme('#6b8bff', '#4767ff')"></div>
+                    <div class="theme-option" style="background: #8bff6b;" onclick="changeTheme('#8bff6b', '#57ff47')"></div>
+                    <div class="theme-option" style="background: #ff8b6b;" onclick="changeTheme('#ff8b6b', '#ff6747')"></div>
+                    <div class="theme-option" style="background: #b86bff;" onclick="changeTheme('#b86bff', '#a747ff')"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // تاريخ اللقاء القادم (يمكن تعديله)
+        const nextMeetingDate = new Date('2024-02-14');
+        // تحديات عشوائية (بدون فيديو)
+const challenges = [
+    {
+        title: "📝 اكتب رسالة حب قصيرة",
+        description: "خذ دقيقتين لكتابة رسالة حب صغيرة تعبر فيها عن مشاعرك. لا يجب أن تكون طويلة، المهم أن تكون صادقة."
+    },
+    {
+        title: "🎵 شارك أغنية تعبّر عن مشاعرك اليوم",
+        description: "اختر أغنية تعبر عن شعورك الحالي وشاركها مع شريكك مع شرح بسيط لماذا اخترت هذه الأغنية."
+    },
+    {
+        title: "📸 أرسل صورة لشيء مميز رأيته اليوم",
+        description: "التقط صورة لشيء لفت انتباهك اليوم واشرح لشريكك لماذا جعلك تفكر فيه/ها."
+    },
+    {
+        title: "💭 شارك ذكرى جميلة بينكما",
+        description: "تذكر لحظة جميلة عشتها مع شريكك وشاركها معه/معها اليوم مع تعليق لطيف."
+    },
+    {
+        title: "🔥 لعبة الأسئلة العشوائية",
+        description: "اطرح على شريكك سؤالًا عشوائيًا (عن الماضي، المستقبل، الأحلام، الذكريات) ودعه/ها يجيب بصدق!"
+    },
+    {
+        title: "📖 اقتباس من كتاب أو قصيدة",
+        description: "شارك مع شريكك اقتباسًا من كتاب أو قصيدة يعبر عن مشاعرك اليوم."
+    },
+    {
+        title: "🎨 ارسم شيئًا صغيرًا يعبر عن حبك",
+        description: "حتى لو لم تكن فنانًا، ارسم رسمة بسيطة (قلب، وردة، منظر طبيعي) وأرسلها مع رسالة لطيفة."
+    },
+    {
+        title: "🍳 شارك وصفة طعام تحبها",
+        description: "اختر وصفة طعام تحبها أو تود تجربتها مع شريكك في المستقبل وشاركها معه/معها."
+    },
+    {
+        title: "🎭 اكتب سيناريو لموقف رومانسي",
+        description: "تخيل موقفًا لطيفًا يحدث بينكما واكتبه وكأنه مشهد في فيلم."
+    },
+    {
+        title: "💌 رسالة مستقبلية",
+        description: "اكتب رسالة لحبيبك يقرأها في المستقبل (بعد أسبوع، شهر، سنة) وارسلها له/لها ليحفظها."
+    },
+    {
+        title: "🔮 توقع شيء جميل سيحدث بينكما قريبًا",
+        description: "اكتب توقعًا عن لحظة رائعة ستحدث بينكما قريبًا وشاركه مع شريكك!"
+    },
+    {
+        title: "🖌️ اجعل اسم حبيبك في صورة جميلة",
+        description: "اكتب اسم شريكك بطريقة إبداعية (بخط يدك، على الرمال، باستخدام تطبيق تصميم) وأرسلها له."
+    },
+    {
+        title: "🕰️ تخيل لقاءكما الأول مجددًا",
+        description: "صف كيف سيكون اللقاء الأول لو حدث الآن بدلًا من الماضي."
+    },
+    {
+        title: "💑 اصنع قائمة بأنشطة تريد فعلها مع شريكك",
+        description: "اكتب قائمة بالأشياء التي تود القيام بها مع شريكك في المستقبل (رحلة، طبخ، قراءة كتاب معًا...)."
+    },
+    {
+        title: "🎲 تحدي الكلمات",
+        description: "اختر 5 كلمات عشوائية، واكتب بها رسالة حب أو قصة قصيرة لشريكك."
+    },
+    {
+        title: "🧩 رسالة مشفرة",
+        description: "اكتب رسالة حب لكن بطريقة مشفرة (مثلاً: استخدم أول حرف من كل كلمة ليشكل رسالة سرية)."
+    },
+    {
+        title: "🌌 لو كنا في عالم خيالي...",
+        description: "اختر عالمًا خياليًا (أفلام، أنمي، ألعاب) وتخيل كيف ستكون علاقتكما هناك."
+    },
+    {
+        title: "📅 خطط لمفاجأة مستقبلية",
+        description: "ابدأ التخطيط لشيء مميز ستفعله لشريكك لاحقًا، حتى لو كان بسيطًا."
+    },
+    {
+        title: "🎈 امنية سرية",
+        description: "اكتب أمنية سرية عن علاقتكما وأرسلها لشريكك دون أن تخبره بمحتواها حتى يأتي اليوم المناسب لتحقيقها."
+    },
+    {
+        title: "🌙 رسالة قبل النوم",
+        description: "اكتب رسالة حب جميلة لشريكك لقراءتها قبل النوم."
+    },
+    {
+        title: "🗺️ خطط لرحلة افتراضية",
+        description: "اختر مدينة تحبانها وخططا ليوم مثالي فيها وكأنكما تزورانها معًا!"
+    },
+    {
+        title: "💙 قائمة بـ 10 أشياء تحبها في شريكك",
+        description: "اكتب 10 أشياء تحبها في شريكك وشاركها معه."
+    },
+    {
+        title: "🔄 استبدل الأدوار ليوم واحد",
+        description: "تحدث وكأنك أنت شريكك، وقل ما تعتقد أنه سيقوله لك!"
+    },
+    {
+        title: "🕰️ رسالة من المستقبل",
+        description: "اكتب رسالة لنفسك المستقبلية، وأرسلها لشريكك ليحفظها لك!"
+    },
+    {
+        title: "🎥 تخيل أننا في فيلم...",
+        description: "اكتب مشهدًا سينمائيًا حيث تكونان البطلين، ماذا سيحدث؟"
+    },
+    {
+        title: "🛒 قائمة تسوق مستقبلية",
+        description: "تخيل أنكما تذهبان للتسوق معًا، ماذا ستشترون؟"
+    },
+    {
+        title: "🏡 احلم بمنزل المستقبل",
+        description: "صف كيف تتخيل منزل أحلامكما معًا!"
+    },
+    {
+        title: "📜 اصنع وعدًا لشريكك",
+        description: "اكتب وعدًا صادقًا لشريكك بشيء تنوي تحقيقه له في المستقبل."
+    },
+    {
+        title: "✨ تحدي اللحظة السعيدة",
+        description: "شارك صورة أو وصف للحظة صغيرة ولكنها جعلتك سعيدًا اليوم."
+    },
+    {
+        title: "📚 قصة قصيرة من 3 جمل",
+        description: "اكتب قصة حب من 3 جمل فقط، ولكن اجعلها مليئة بالمشاعر!"
+    },
+    {
+        title: "🔍 شيء يذكرك بشريكك",
+        description: "ابحث حولك عن شيء يذكرك بشريكك وأخبره لماذا!"
+    },
+    {
+        title: "💞 تحدي النظرة الأولى",
+        description: "صف شعورك عندما رأيت شريكك لأول مرة."
+    },
+    {
+        title: "🎶 غنِّ بيت شعر أو أغنية له",
+        description: "اكتب كلمات أغنية أو بيت شعر يمثل مشاعرك اليوم."
+    },
+    {
+        title: "🌟 لحظة فخر",
+        description: "اذكر شيئًا تفخر به في شريكك اليوم!"
+    },
+    {
+        title: "📜 قائمة الأشياء التي لم تخبره بها بعد",
+        description: "اكتب بعض الأشياء التي لم تخبر بها شريكك بعد ولكنك تود قولها."
+    },
+    {
+        title: "💞 ماذا ستقول له لو كان أمامك الآن؟",
+        description: "اكتب الكلمات التي ستقولها لحبيبك لو كان أمامك الآن!"
+    }
+];
+
+        
+        // مفاجآت عشوائية
+const surprises = [
+    "غير صورة ملفك الشخصي إلى شيء يُذكّر شريكك بك. 🖼️",
+    "أرسل رسالة حب غير متوقعة في منتصف اليوم. 💌",
+    "شارك صورة قديمة لكما مع تعليق لطيف. 📸",
+    "أرسل مقطع صوتي قصير تقول فيه 'أفتقدك' أو 'أحبك'. 🎤",
+    "خطط لموعد افتراضي (مشاهدة فيلم معًا عبر الإنترنت، لعبة مشتركة، إلخ). 🎥🎮",
+    "أرسل قائمة بأسباب تحبك لشريكك (حتى لو كانت بسيطة). ❤️📃",
+    "شارك حلمًا أو أمنية تتمنى تحقيقها مع شريكك في المستقبل. ✨",
+    "أرسل زهرة افتراضية مع رسالة لطيفة. 🌹",
+    "غيّر اسم جهة اتصال شريكك إلى شيء رومانسي جديد. 📲",
+    "أرسل صورة لشيء يذكرك به وقل لماذا. 🏞️",
+    "اكتب رسالة طويلة تعبر فيها عن مشاعرك وأرسلها فجأة. 💬",
+    "ارسل مذكرة صوتية تحتوي على شيء لطيف عفوي. 🎙️",
+    "اقترح تجربة جديدة للقيام بها معًا في المستقبل. 🏕️",
+    "تحدى شريكك في لعبة بسيطة واكتب أن الفائز يحصل على طلب خاص. 🎲",
+    "اطلب من شريكك أغنيته المفضلة، وأرسلها له مع رسالة رومانسية. 🎶",
+    "أرسل إيموجي واحد فقط يصف حالتك العاطفية تجاه شريكك الآن. 😊💞",
+    "اكتب شيئًا بخط يدك وصوّره وأرسله لشريكك. ✍️📷",
+    "اسأل شريكك عن شيء بسيط جعله سعيدًا اليوم، وشارك شيئًا مشابهًا. 😄",
+    "اختر صورة عشوائية لديك وأرسلها، وقل لماذا تذكّرك به. 📷",
+    "ابدأ محادثة بـ 'لو كنا معًا الآن، كنت سأفعل ...' 🥰",
+    "أرسل رسالة غامضة واجعل شريكك يخمن معناها. 🔍",
+    "اسأل شريكك عن مكان يود الذهاب إليه، ثم ضع صورة له كخلفية لهاتفك. 🏖️",
+    "أرسل تسجيلًا صوتيًا وأنت تنطق اسم شريكك بطريقة رومانسية. 🎙️💖",
+    "اختر كلمتين فقط لوصف مشاعرك الآن، واطلب من شريكك فعل نفس الشيء. 🥰✨",
+    "أرسل رسالة صباحية أو ليلية بطريقة غير متوقعة ومميزة. 🌅🌙",
+    "ارسل تحديًا صغيرًا مثل 'كل مرة تراني فيها اليوم أرسل لي ❤️' 🎯",
+    "شارك مقطع فيديو مضحك أو لطيف يعكس علاقتكما. 😂💑",
+    "اكتب 'أنا أحبك' بـ 5 لغات مختلفة وأرسلها. 🌍💖"
+];
+
+        
+        // مواقف رومانسية عشوائية
+        // مواقف رومانسية عشوائية
+const scenarios = [
+    "تخيل أننا في مقهى الآن، وأنت تطلب لي مشروبي المفضل، ما هو؟ ☕",
+    "نحن في رحلة افتراضية إلى مدينة نحبها، أين سنذهب أولًا؟ 🌍",
+    "اكتب لي شيئًا لو كنا الآن معًا تحت المطر... ☔💞",
+    "لو كان بإمكاننا السفر الآن إلى أي مكان، إلى أين تريد أن نذهب ولماذا؟ ✈️",
+    "ما هو أول شيء تريد أن تقوله لي عندما نلتقي المرة القادمة؟ 💖",
+    "تخيل أننا نطبخ معًا اليوم، ما هو الطبق الذي تريد أن نعدّه سويًا؟ 🍳",
+    "لو كان بإمكاننا قضاء يوم كامل معًا دون قيود، كيف سنقضيه؟ 🌟",
+    "ما هي الصفة التي تحبها فيّ أكثر من غيرها؟ 💭",
+    "إذا كان بإمكانك سماع دقات قلبي الآن، ماذا تعتقد أنها ستقول لك؟ ❤️",
+    "لو كتبنا رسالة صغيرة لبعضنا البعض الآن، ماذا ستكتب لي؟ 📜",
+    "إذا كنا سنشاهد فيلمًا معًا الليلة، أي فيلم ستختار؟ 🎬",
+    "ما هو أول مكان سنذهب إليه في موعدنا القادم؟ 💑",
+    "إذا كان يجب علينا اختيار أغنية تعبّر عن علاقتنا، ماذا ستكون؟ 🎶",
+    "ما هو أجمل ذكرى لديك معي حتى الآن؟ 🥰",
+    "تخيل أننا نمشي تحت سماء مليئة بالنجوم، ماذا ستقول لي في هذه اللحظة؟ 🌌",
+    "لو كان بيدي الآن وردة واحدة لأهديها لك، ماذا ستقول لي عند استلامها؟ 🌹",
+    "ما هو أكثر شيء تود أن تجربه معي في المستقبل؟ 🚀",
+    "تخيل أننا نكتب قصة عن حبنا، ما سيكون عنوانها؟ 📖",
+    "إذا كنت أستطيع قراءة أفكارك الآن، ماذا تعتقد أنني سأجد فيها عني؟ 🧠💞",
+    "ما هو الشيء الذي يجعلني مميزًا بالنسبة لك عن أي شخص آخر؟ ✨",
+    "لو كنت تستطيع إرسال رسالة قصيرة إلى قلبي، ماذا ستكتب؟ 💌",
+    "إذا كان بإمكاننا العودة في الزمن إلى أي لحظة عشناها معًا، أي لحظة ستختار؟ ⏳",
+    "ما هو أكثر شيء صغير أفعله يجعلك سعيدًا دون أن أدري؟ 😊",
+    "لو كان لدينا صندوق ذكريات مشترك، ما أول شيء تود وضعه فيه؟ 🎁",
+    "ما هو الحلم الذي تتمنى أن نحققه سويًا؟ 💭💑"
+];
+
+        
+        // تهيئة الصفحة عند التحميل
+        document.addEventListener('DOMContentLoaded', function() {
+            // تحميل التخصيصات
+            loadCustomization();
+            
+            // تحديث المكونات
+            updateCountdown();
+            loadMemories();
+            checkForMessages();
+            loadFeelings();
+            
+            // تعيين تحديات أولية
+            if (!localStorage.getItem('currentChallenge')) {
+                setRandomChallenge();
+            } else {
+                displayCurrentChallenge();
+            }
+            
+            // توليد موقف عشوائي أولي
+            generateScenario();
+            
+            // تحديث العد التنازلي كل ثانية
+            setInterval(updateCountdown, 1000);
+        });
+        
+        // تعيين تحدي عشوائي
+        function setRandomChallenge() {
+            // استبعاد التحدي السابق إذا كان موجودًا
+            const prevChallenge = localStorage.getItem('currentChallenge');
+            let availableChallenges = [...challenges];
+            
+            if (prevChallenge) {
+                const prevTitle = JSON.parse(prevChallenge).title;
+                availableChallenges = availableChallenges.filter(c => c.title !== prevTitle);
+            }
+            
+            if (availableChallenges.length === 0) {
+                availableChallenges = [...challenges];
+            }
+            
+            const randomIndex = Math.floor(Math.random() * availableChallenges.length);
+            const challenge = availableChallenges[randomIndex];
+            localStorage.setItem('currentChallenge', JSON.stringify(challenge));
+            displayCurrentChallenge();
+        }
+        
+        // عرض التحدي الحالي
+        function displayCurrentChallenge() {
+            const challenge = JSON.parse(localStorage.getItem('currentChallenge'));
+            
+            if (challenge) {
+                document.getElementById('challenge-title').textContent = challenge.title;
+                document.getElementById('challenge-description').textContent = challenge.description;
+            }
+        }
+        
+        // تخطي التحدي الحالي
+        function skipChallenge() {
+            setRandomChallenge();
+        }
+        
+        // إكمال التحدي
+        function completeChallenge(type) {
+            if (type === 'daily') {
+                // حفظ التحدي في الذكريات
+                const challenge = JSON.parse(localStorage.getItem('currentChallenge'));
+                const memory = {
+                    type: 'challenge',
+                    title: challenge.title,
+                    date: new Date().toLocaleDateString('ar-EG', { 
+                        year: 'numeric', 
+                        month: 'long', 
+                        day: 'numeric',
+                        weekday: 'long'
+                    }),
+                    note: ''
+                };
+                
+                saveMemory(memory);
+                
+                // تعيين تحدي جديد
+                setRandomChallenge();
+                
+                // إظهار رسالة تأكيد
+                showNotification('تم حفظ التحدي في سجل الذكريات!', 'success');
+            }
+        }
+        
+        // حفظ الذكرى
+        function saveMemory(memory) {
+            let memories = JSON.parse(localStorage.getItem('memories')) || [];
+            memories.push(memory);
+            localStorage.setItem('memories', JSON.stringify(memories));
+            loadMemories();
+        }
+        
+        // تحميل الذكريات
+        function loadMemories() {
+            const memories = JSON.parse(localStorage.getItem('memories')) || [];
+            const memoriesList = document.getElementById('memories-list');
+            
+            memoriesList.innerHTML = '';
+            
+            if (memories.length === 0) {
+                memoriesList.innerHTML = `
+                    <div class="empty-state">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEyLDJBMTAsMTAgMCAwLDAgMiwxMkEyLDIgMCAwLDAgNCwxNEM0LDEzIDQsMTMgNCwxM0ExLDEgMCAwLDEgNSwxMkE3LDcgMCAwLDEgMTIsNUE3LDcgMCAwLDEgMTksMTJBMSwxIDAgMCwxIDIwLDEzQzIwLDEzIDIwLDEzIDIwLDE0QTIsMiAwIDAsMCAyMiwxMkExMCwxMCAwIDAsMCAxMiwyTTcsMTJBMSwxIDAgMCwwIDYsMTNBMSwxIDAgMCwwIDcsMTRBMSwxIDAgMCwwIDgsMTNBMSwxIDAgMCwwIDcsMTJNMTcsMTJBMSwxIDAgMCwwIDE2LDEzQTEsMSAwIDAsMCAxNywxNEExLDEgMCAwLDAgMTgsMTNBMSwxIDAgMCwwIDE3LDEyTTEyLDEwQTIsMiAwIDAsMCAxMCwxMkEyLDIgMCAwLDAgMTIsMTRBMiwyIDAgMCwwIDE0LDEyQTIsMiAwIDAsMCAxMiwxME0xMiwxNUExLDEgMCAwLDAgMTEsMTZBMSwxIDAgMCwwIDEyLDE3QTEsMSAwIDAsMCAxMywxNkExLDEgMCAwLDAgMTIsMTVNNywxNUExLDEgMCAwLDAgNiwxNkExLDEgMCAwLDAgNywxN0ExLDEgMCAwLDAgOCwxNkExLDEgMCAwLDAgNywxNU0xNywxNUExLDEgMCAwLDAgMTYsMTZBMSwxIDAgMCwwIDE3LDE3QTEsMSAwIDAsMCAxOCwxNkExLDEgMCAwLDAgMTcsMTUiIGZpbGw9IiNGRjZCOEIiLz48L3N2Zz4=" alt="Empty">
+                        <p>لا توجد ذكريات مسجلة بعد. ابدأ بإكمال التحديات!</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            memories.slice().reverse().forEach((memory, index) => {
+                if (index >= 20) return; // عرض آخر 20 ذكرى فقط
+                
+                const memoryDiv = document.createElement('div');
+                memoryDiv.className = 'memory-item';
+                memoryDiv.innerHTML = `
+                    <h3>${memory.title}</h3>
+                    <div class="memory-date">${memory.date}</div>
+                    ${memory.note ? `<p>${memory.note}</p>` : ''}
+                `;
+                memoriesList.appendChild(memoryDiv);
+            });
+        }
+        
+        // توليد مفاجأة عشوائية
+        function generateSurprise() {
+            const randomIndex = Math.floor(Math.random() * surprises.length);
+            const surprise = surprises[randomIndex];
+            
+            document.getElementById('surprise-content').innerHTML = `
+                <div class="love-note">
+                    <h3>فكرتك للمفاجأة:</h3>
+                    <p>${surprise}</p>
+                    <div class="btn-group">
+                        <button onclick="saveSurprise('${surprise.replace(/'/g, "\\'")}')">سجل هذه المفاجأة</button>
+                        <button class="btn-secondary" onclick="generateSurprise()">مفاجأة أخرى</button>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // حفظ المفاجأة كذكرى
+        function saveSurprise(surprise) {
+            const memory = {
+                type: 'surprise',
+                title: 'مفاجأة رقمية',
+                date: new Date().toLocaleDateString('ar-EG', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric',
+                    weekday: 'long'
+                }),
+                note: surprise
+            };
+            
+            saveMemory(memory);
+            generateSurprise();
+            showNotification('تم حفظ المفاجأة في سجل الذكريات!', 'success');
+        }
+        
+        // حفظ الرسالة السرية
+        function saveSecretMessage() {
+            const message = document.getElementById('new-message').value.trim();
+            if (message === '') {
+                showNotification('الرجاء كتابة رسالة أولاً', 'error');
+                return;
+            }
+            
+            localStorage.setItem('secretMessage', message);
+            document.getElementById('new-message').value = '';
+            showNotification('تم حفظ الرسالة! سيراها شريكك عند زيارته القادمة للموقع.', 'success');
+        }
+        
+        // مسح الرسالة
+        function clearMessage() {
+            document.getElementById('new-message').value = '';
+        }
+        
+        // التحقق من وجود رسائل جديدة
+        function checkForMessages() {
+            const message = localStorage.getItem('secretMessage');
+            if (message) {
+                document.getElementById('received-message').style.display = 'block';
+                document.getElementById('message-content').textContent = message;
+            }
+        }
+        
+        // إخفاء الرسالة بعد قراءتها
+        function hideMessage() {
+            localStorage.removeItem('secretMessage');
+            document.getElementById('received-message').style.display = 'none';
+            showNotification('تم حذف الرسالة بعد قراءتها', 'info');
+        }
+        
+        // تحديث العد التنازلي
+        function updateCountdown() {
+            const now = new Date();
+            const diff = nextMeetingDate - now;
+            
+            if (diff <= 0) {
+                document.getElementById('countdown-timer').innerHTML = `
+                    <div style="background: linear-gradient(135deg, #4CAF50, #2E7D32); padding: 20px; border-radius: 10px; color: white;">
+                        <p style="margin: 0; font-size: 1.2rem;">🎉 حان وقت اللقاء! استمتعوا بوقتكم معًا! 🎉</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('countdown-timer').innerHTML = `
+                <div><span>${days}</span><span>يوم</span></div>
+                <div><span>${hours}</span><span>ساعة</span></div>
+                <div><span>${minutes}</span><span>دقيقة</span></div>
+                <div><span>${seconds}</span><span>ثانية</span></div>
+            `;
+        }
+        
+        // حفظ الشعور اليومي
+        function saveFeeling() {
+            const feeling = document.getElementById('today-feeling').value.trim();
+            if (feeling === '') {
+                showNotification('الرجاء كتابة شعورك أولاً', 'error');
+                return;
+            }
+            
+            const date = new Date().toLocaleDateString('ar-EG', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                weekday: 'long'
+            });
+            const feelingObj = { date, feeling };
+            
+            let feelings = JSON.parse(localStorage.getItem('feelings')) || [];
+            feelings.push(feelingObj);
+            localStorage.setItem('feelings', JSON.stringify(feelings));
+            
+            document.getElementById('today-feeling').value = '';
+            loadFeelings();
+            showNotification('تم حفظ شعورك اليومي', 'success');
+        }
+        
+        // تحميل المشاعر السابقة
+        function loadFeelings() {
+            const feelings = JSON.parse(localStorage.getItem('feelings')) || [];
+            const feelingsHistory = document.getElementById('feelings-history');
+            
+            feelingsHistory.innerHTML = '';
+            
+            if (feelings.length === 0) {
+                feelingsHistory.innerHTML = `
+                    <div class="empty-state">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEyLDIwQTgsOCAwIDAsMCAyMCwxMkE4LDggMCAwLDAgMTIsNEE4LDggMCAwLDAgNCwxMkE4LDggMCAwLDAgMTIsMjBNMTIsMkExMCwxMCAwIDAsMCAyLDEyQTEwLDEwIDAgMCwwIDEyLDIyQTEwLDEwIDAgMCwwIDIyLDEyQTEwLDEwIDAgMCwwIDEyLDJNNywxM0ExLDEgMCAwLDAgNiwxMkExLDEgMCAwLDAgNywxMUExLDEgMCAwLDAgOCwxMkExLDEgMCAwLDAgNywxM001NywxM0ExLDEgMCAwLDAgMTYsMTJBMSwxIDAgMCwwIDE3LDExQTEsMSAwIDAsMCAxOCwxMkExLDEgMCAwLDAgMTcsMTNNMTIsMTNBMSwxIDAgMCwwIDExLDEyQTEsMSAwIDAsMCAxMiwxMUExLDEgMCAwLDAgMTMsMTJBMSwxIDAgMCwwIDEyLDEzTTEwLDlBMiwyIDAgMCwwIDgsN0EyLDIgMCAwLDAgMTAsNUEyLDIgMCAwLDAgMTIsN0EyLDIgMCAwLDAgMTAsOU0xNCw5QTIsMiAwIDAsMCAxMiw3QTIsMiAwIDAsMCAxNCw1QTIsMiAwIDAsMCAxNiw3QTIsMiAwIDAsMCAxNCw5WiIgZmlsbD0iI0ZGNkI4QiIvPjwvc3ZnPg==" alt="Empty">
+                        <p>لا توجد مشاعر مسجلة بعد. ابدأ بمشاركة شعورك اليوم!</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            feelings.slice().reverse().forEach((item, index) => {
+                if (index >= 15) return; // عرض آخر 15 شعور فقط
+                
+                const feelingDiv = document.createElement('div');
+                feelingDiv.className = 'memory-item';
+                feelingDiv.innerHTML = `
+                    <div class="memory-date">${item.date}</div>
+                    <p>${item.feeling}</p>
+                `;
+                feelingsHistory.appendChild(feelingDiv);
+            });
+        }
+        
+        // توليد موقف رومانسي عشوائي
+        function generateScenario() {
+            const randomIndex = Math.floor(Math.random() * scenarios.length);
+            const scenario = scenarios[randomIndex];
+            document.getElementById('scenario-text').textContent = `"${scenario}"`;
+        }
+        
+        // تحميل التخصيصات
+        function loadCustomization() {
+            const partnerName = localStorage.getItem('partnerName');
+            const theme = localStorage.getItem('theme');
+            
+            if (partnerName) {
+                document.getElementById('partner-name').value = partnerName;
+                updatePartnerName(partnerName);
+            }
+            
+            if (theme) {
+                const colors = theme.split(',');
+                changeTheme(colors[0], colors[1], false);
+            }
+        }
+        
+        // حفظ التخصيصات
+        function saveCustomization() {
+            const partnerName = document.getElementById('partner-name').value.trim();
+            
+            if (partnerName) {
+                localStorage.setItem('partnerName', partnerName);
+                updatePartnerName(partnerName);
+                showNotification('تم حفظ التخصيصات', 'success');
+            }
+        }
+        
+        // تحديث اسم الشريك في الواجهة
+        function updatePartnerName(name) {
+            const header = document.querySelector('header h1');
+            if (header) {
+                header.textContent = `مرحبًا أمير و${name} 💖، هذا هو عالمكما الخاص!`;
+            }
+        }
+        
+        // تغيير سمة الموقع
+        function changeTheme(primary, accent, showAlert = true) {
+            document.documentElement.style.setProperty('--primary-color', primary);
+            document.documentElement.style.setProperty('--accent-color', accent);
+            localStorage.setItem('theme', `${primary},${accent}`);
+            
+            // تحديث الأزرار النشطة
+            document.querySelectorAll('.theme-option').forEach(option => {
+                option.classList.remove('active');
+                if (option.style.backgroundColor === primary) {
+                    option.classList.add('active');
+                }
+            });
+            
+            if (showAlert) {
+                showNotification('تم تغيير لون الموقع', 'success');
+            }
+        }
+        
+        // عرض الإشعارات
+        function showNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.textContent = message;
+            
+            notification.style.position = 'fixed';
+            notification.style.bottom = '20px';
+            notification.style.right = '20px';
+            notification.style.padding = '15px 20px';
+            notification.style.backgroundColor = type === 'error' ? '#ff4757' : 
+                                              type === 'success' ? '#2ed573' : 
+                                              type === 'info' ? '#1e90ff' : '#ffa502';
+            notification.style.color = 'white';
+            notification.style.borderRadius = '5px';
+            notification.style.boxShadow = '0 3px 10px rgba(0,0,0,0.2)';
+            notification.style.zIndex = '1000';
+            notification.style.animation = 'fadeIn 0.3s ease';
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'fadeOut 0.3s ease';
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

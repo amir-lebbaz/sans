@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21 مارس – يوم بدأ قلبي ينبض لكِ 💖</title>
+    <link rel="icon" type="image/png" href="heart.png">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(to right, #7b7b7b, #ffffff);
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+            overflow-y: auto;
+            max-height: 100vh;
+            position: relative;
+            animation: fadeIn 2s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        p {
+            font-size: 1em;
+            line-height: 1.8;
+            margin: 10px 0;
+            animation: fadeInUp 2s ease-in-out;
+            color: black
+        }
+
+        img {
+            width: 90%;
+            max-width: 250px;
+            margin: 20px 0;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 2.5s ease-in-out;
+        }
+
+        .heart {
+            font-size: 3em;
+            margin-top: 20px;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .heart-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .heart-shape {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.5em;
+            animation: floatUp 5s infinite ease-in-out;
+        }
+
+        @keyframes floatUp {
+            from { transform: translateY(100vh) scale(1); opacity: 1; }
+            to { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+        }
+
+        .love-message {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 1em;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .memory-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .memory-gallery img {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            object-fit: cover;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .memory-gallery img:hover {
+            transform: scale(1.1);
+            opacity: 0.9;
+        }
+
+        .progress-container {
+            width: 80%;
+            max-width: 300px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: #fff;
+            border-radius: 5px;
+            width: 0;
+            transition: width 1s ease;
+        }
+
+        .share-button {
+            margin: 20px 0;
+        }
+
+        .share-button button {
+            background: rgba(255, 255, 255, 0.3);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .share-button button:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .click-message {
+            position: absolute;
+            font-size: 1.2em;
+            color: #fff;
+            animation: floatUp 1s ease-in-out;
+        }
+
+        @keyframes floatUp {
+            from { transform: translateY(0); opacity: 1; }
+            to { transform: translateY(-50px); opacity: 0; }
+        }
+
+        .handwritten-message img {
+            width: 100%;
+            max-width: 300px;
+            margin: 20px 0;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            p {
+                font-size: 0.9em;
+            }
+            .love-message {
+                font-size: 0.9em;
+                bottom: 10px;
+            }
+            .memory-gallery img {
+                width: 80px;
+                height: 80px;
+            }
+        }
+        
+        .timer {
+            font-size: 24px;
+            font-weight: bold;
+            color: #c43967;
+            margin-top: 20px;
+        }
+        @media (max-width: 600px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    p {
+        font-size: 0.9em;
+    }
+    .progress-container {
+        width: 90%;
+    }
+}
+.memory-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+body {
+    overflow-x: hidden;
+}
+* {
+    box-sizing: border-box;
+}
+img, .progress-container, .memory-gallery {
+    max-width: 100%;
+}
+
+#lol{
+    font-style: none;
+    color: #c43967;
+    text-decoration: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: large;
+}
+.lol {
+    border-radius: 10px;
+    border: solid rgb(97, 70, 93) ;
+}
+
+    </style>
+   
+</head>
+<body>
+    <div class="heart-background"></div>
+
+    <h1>21 مارس – يوم بدأ قلبي ينبض لكِ 💖</h1>
+    <p>دلال امير</p>
+    <p>في هذا اليوم، ولدت قصة حبنا رسميًا. أنتِ أكثر من مجرد حبيبة، أنتِ عالمي، قلبي، روحي، والنجمة التي تضيء حياتي. لا كلمات تستطيع أن تصف مدى امتناني لوجودك في حياتي.</p>
+    <p>أعدك أن كل عام في هذا اليوم، سأجعل لحبنا ذكرى أجمل من التي قبلها، لأنكِ تستحقين كل الحب والسعادة.</p>
+
+    <!-- معرض الذكريات -->
+
+
+    <h1>أمير ❤️ دلال</h1>
+    <p>لقد مرت على علاقتنا:</p>
+    <div class="timer" id="loveTimer">جارٍ الحساب...</div>
+
+    <!-- شريط التقدم -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <div> <button class="lol"><a href="lol.html" id="lol">عالمكنا الخاص</a></button></div>
+    <p>قلبي ينبض باسمك، وحبي يكبر لكِ كل يوم ❤️</p>
+    <div class="heart">❤️</div>
+
+   
+    <!-- رسالة الحب العائمة -->
+    <div class="love-message" id="loveMessage"></div>
+
+    <!-- تشغيل الأغنية -->
+    <audio id="loveSong" loop>
+        <source src="love.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.getElementById('loveSong');
+            const loveMessage = document.getElementById('loveMessage');
+            const messages = [
+                "أنتِ كل شيء جميل في حياتي 💖",
+                "حبي لكِ ينمو كل يوم 🌹",
+                "أنتِ سبب سعادتي وابتسامتي 😊",
+                "معكِ أشعر أنني في عالم آخر 🌟",
+                "أنتِ حلمي الذي أصبح حقيقة 💫"
+            ];
+
+            // تشغيل الأغنية تلقائيًا
+            function playAudio() {
+                audio.volume = 0.5;
+                audio.play().catch(() => {
+                    document.body.addEventListener('click', () => {
+                        audio.play();
+                    }, { once: true });
+                });
+            }
+
+            playAudio();
+
+            // عرض رسائل حب عشوائية
+            function showRandomMessage() {
+                const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+                loveMessage.textContent = randomMessage;
+                setTimeout(showRandomMessage, 5000);
+            }
+
+            showRandomMessage();
+
+            // إنشاء قلوب متحركة
+            const heartContainer = document.querySelector('.heart-background');
+            function createHeart() {
+                const heart = document.createElement('div');
+                heart.classList.add('heart-shape');
+                heart.innerHTML = '♥️❤️';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                heartContainer.appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 5000);
+            }
+
+            setInterval(createHeart, 300);
+
+            // شريط التقدم
+            const startDate = new Date('2023-03-21');
+            const today = new Date();
+            const totalDays = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
+            const progressBar = document.getElementById('progressBar');
+            progressBar.style.width = (totalDays / 365) * 100 + '%';
+
+            // رسائل النقر
+            document.addEventListener('click', function(event) {
+                const message = document.createElement('div');
+                message.classList.add('click-message');
+                message.textContent = "أحبك ❤️";
+                message.style.left = event.clientX + 'px';
+                message.style.top = event.clientY + 'px';
+                document.body.appendChild(message);
+
+                setTimeout(() => {
+                    message.remove();
+                }, 2000);
+            });
+        });
+
+        function updateTimer() {
+    // Relationship start date (change if needed)
+    const startDate = new Date("2025-03-21T02:02:00");
+
+    // Current time
+    const now = new Date();
+
+    // Time difference in milliseconds
+    const diff = now - startDate;
+
+    // Calculate days, hours, minutes, and seconds
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    // Display the result
+    document.getElementById("loveTimer").innerHTML = 
+        `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds ❤️`;
+}
+
+// Update the timer every second
+setInterval(updateTimer, 1000);
+
+// Run the function on page load
+updateTimer();
+
+
+  
+  </script>
+</body>
+</html>
